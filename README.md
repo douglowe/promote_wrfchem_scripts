@@ -5,7 +5,7 @@ Scripting requirements:
  * scenario configuration files:
   * chemical settings files
   * time period settings files
- * NCL scripts for post-processing
+ * NCL scripts for post-processing (https://github.com/douglowe/WRFChem-Basic-Plotting.git)
 
 Initial Scenario setup:
 * edit local_settings.txt
