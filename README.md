@@ -27,5 +27,6 @@ Running each time period:
   * set the scenario names
 * edit STEP4a_gather_outputs_template.sh:
   * set the script, work, and output directories
+  * set the domain that you want to process
 * submit the batch jobs:
   * qsub BATCH_STEP4_run_WRF_gather_outputs.sh
