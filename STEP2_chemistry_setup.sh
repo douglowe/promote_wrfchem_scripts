@@ -48,6 +48,8 @@ ln -sf ${BDY_DIR}wrfbdy_d01 .
 # copy across namelist, replacing the control strings for the chemical options as we do this
 sed -e "s|%%BB_SCALE%%|${BB_VBS_SCALE}|g" \
 	-e "s|%%AN_SCALE%%|${AN_VBS_SCALE}|g" \
+	-e "s|%%BB_OXIDATE%%|${BB_VBS_OXIDATE}|g" \
+	-e "s|%%AN_OXIDATE%%|${AN_VBS_OXIDATE}|g" \
 	-e "s|%%BB_AGE%%|${BB_VBS_AGERATE}|g" \
 	-e "s|%%AN_AGE%%|${AN_VBS_AGERATE}|g" \
 	-e "s|%%BB_FRAC_1%%|${BB_VBS_FRAC_1}|g" \
