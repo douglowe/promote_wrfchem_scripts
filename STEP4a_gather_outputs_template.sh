@@ -13,8 +13,9 @@
 
 cd $PBS_O_WORKDIR
 
-# load required modules
-module load ncl
+# load miniconda & activate NCL virtual environment
+. ~/miniconda3.sh
+conda activate ncl-6.6.2
 
 
 #### Constants
