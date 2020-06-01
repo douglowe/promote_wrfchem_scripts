@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
-#PBS -l select=10
-#PBS -l walltime=24:00:00
+#PBS -l select=4
+#PBS -l walltime=48:00:00
 #PBS -A n02-weat
 #PBS -N promote-batch
 
@@ -20,13 +20,12 @@ cd $PBS_O_WORKDIR
 
 WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
 
-SCENARIOS=( 'run_WRF_test_a' \
-			'run_WRF_test_b' )
+SCENARIOS=( 'run_WRF_test_june_2domains' )
 SCEN_NUM=${#SCENARIOS[@]}
 SCEN_STRING=${SCENARIOS[@]}    # needed to convert to a single plain string for the sed command later
 
 JOB_CORES='81'
-NODE_CORES='17'
+NODE_CORES='21'
 
 FINISHED=0
 
@@ -114,7 +113,7 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 			STEP4a_gather_outputs_template.sh > STEP4a_gather_outputs_${curr_year}_${curr_month}_${curr_day}.sh
 
 		# submit it
-		qsub STEP4a_gather_outputs_${curr_year}_${curr_month}_${curr_day}.sh
+#		qsub STEP4a_gather_outputs_${curr_year}_${curr_month}_${curr_day}.sh
 		
 		# increment the dates that we are looking for next
 		increment_dates
