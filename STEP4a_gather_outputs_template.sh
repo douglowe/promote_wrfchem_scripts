@@ -42,7 +42,7 @@ HOUR_STRING='hour=(/"*"/)'
 INDIR_STRING="input_root_directory=\"${WORK_ROOT}\""
 OUTDIR_STRING="output_root_directory=\"${OUTPUT_ROOT}\""
 #SCEN_STRING
-DOMAIN_STRING='domain="d03"'
+DOMAIN_STRING='domain="d01"'
 
 
 
