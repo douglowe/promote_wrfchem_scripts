@@ -53,11 +53,10 @@ if (.not. isvar("domain")) then
 	domain="d03"
 end if
 
-
-file_variables = (/ "AOD550", "PM1_mass", "OC_ratio", "PM25_mass", "PM10_mass", "PM1_VBS_OM", "PM1_SOA_OM", "PM1_Inorg" /)
-
-
-
+file_variables = (/ "AOD550", "PM1_mass", "OC_ratio", \
+					"PM25_mass", "PM10_mass", "PM1_VBS_OM", \
+					"PM1_SOA_OM", "PM1_ANT_SOA_OM", "PM1_BIOG_SOA_OM", \
+					"PM1_Inorg" /)
 
 ; This flag determines if we want to plot a set of defined time points, or the whole campaign.
 ;    True -> plot the chosen times
@@ -101,8 +100,11 @@ variable_unit_description@AOD550 = ""
 variable_description@PM1_mass      = "Dry PM1 aerosol mass"
 variable_unit_description@PM1_mass = "ug/kg-dryair"
 
-variable_description@OC_ratio      = "PM1 Organic Mass Oxygen:Carbon ratio"
+variable_description@OC_ratio      = "PM1 (VBS) Organic Mass Oxygen:Carbon ratio"
 variable_unit_description@OC_ratio = ""
+
+variable_description@All_OC_ratio      = "PM1 (Total) Organic Mass Oxygen:Carbon ratio"
+variable_unit_description@All_OC_ratio = ""
 
 variable_description@PM25_mass   = "Dry PM2.5 aerosol mass"
 variable_unit_description@PM25_mass = "ug/kg-dryair"
@@ -116,11 +118,14 @@ variable_unit_description@PM1_VBS_OM = "ug/kg-dryair"
 variable_description@PM1_SOA_OM = "PM1 SOA organic mass"
 variable_unit_description@PM1_SOA_OM = "ug/kg-dryair"
 
+variable_description@PM1_ANT_SOA_OM = "PM1 anthropogenic SOA organic mass"
+variable_unit_description@PM1_ANT_SOA_OM = "ug/kg-dryair"
+
+variable_description@PM1_BIOG_SOA_OM = "PM1 biogenic SOA organic mass"
+variable_unit_description@PM1_BIOG_SOA_OM = "ug/kg-dryair"
+
 variable_description@PM1_Inorg = "PM1 Inorganic mass (without OIN, BC, or Na)"
 variable_unit_description@PM1_OM = "ug/kg-dryair"
-
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;; end of settings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
