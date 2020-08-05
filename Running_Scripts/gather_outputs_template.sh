@@ -19,11 +19,11 @@ conda activate ncl-6.6.2
 
 
 #### Constants
-SCRIPT_DIR=/work/n02/n02/lowe/PROMOTE/running_scripts/Data_Extraction_Scripts/
+SCRIPT_DIR=/work/n02/n02/lowe/PROMOTE/running_scripts_test_2domains/Data_Extraction_Scripts/
 
 WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
 
-OUTPUT_ROOT=/work/n02/n02/lowe/PROMTE/PROMOTE_data_outputs/
+OUTPUT_ROOT=/work/n02/n02/lowe/PROMOTE/PROMOTE_data_outputs/
 
 export WRF_NCL_ROOT=$SCRIPT_DIR
 
