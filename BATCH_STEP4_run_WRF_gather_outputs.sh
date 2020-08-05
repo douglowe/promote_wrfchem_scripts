@@ -20,7 +20,7 @@ cd $PBS_O_WORKDIR
 
 WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
 
-SCENARIOS=( 'run_WRF_test_june_2domains' )
+SCENARIOS=( 'run_WRF_test_june_2nd_domain' )
 SCEN_NUM=${#SCENARIOS[@]}
 SCEN_STRING=${SCENARIOS[@]}    # needed to convert to a single plain string for the sed command later
 

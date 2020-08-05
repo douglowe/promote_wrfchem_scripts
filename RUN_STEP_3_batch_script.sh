@@ -6,19 +6,18 @@
 #
 
 # select global settings file, and load it
-GLOBAL_SETTINGS_FILE=/work/n02/n02/lowe/PROMOTE/running_scripts/local_settings.txt
+GLOBAL_SETTINGS_FILE=/work/n02/n02/lowe/PROMOTE/running_scripts_test_2domains/local_settings.txt
 
 source $GLOBAL_SETTINGS_FILE
 
 
-SCENARIOS=( 'run_WRF_test_a' \
-			'run_WRF_test_b' )
+SCENARIOS=( 'run_WRF_test_june_2nd_domain_test_edge_smoothing' )
 
 #WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
 
 #SCRIPT_ROOT=/work/n02/n02/lowe/PROMOTE/running_scripts/
 
-time_settings="time_prototype_a.txt"
+time_settings="time_prototype_may_start.txt"
 
 for scen in ${SCENARIOS[@]}; do
 
