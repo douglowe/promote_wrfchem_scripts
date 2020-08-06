@@ -1,0 +1,3 @@
+[submodule "Data_Extraction_Scripts/library"]
+	path = Data_Extraction_Scripts/library
+	url = https://github.com/douglowe/WRFChem-NCL-library.git

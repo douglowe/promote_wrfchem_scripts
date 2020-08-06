@@ -10,9 +10,7 @@ GLOBAL_SETTINGS_FILE=/work/n02/n02/reyes/PROMOTE/running_scripts_2domains/local_
 
 source $GLOBAL_SETTINGS_FILE
 
-
 SCENARIOS=( 'run_WRF_test_c' )
-
 
 #WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
 

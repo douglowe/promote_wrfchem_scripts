@@ -117,7 +117,7 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 			STEP4a_gather_outputs_template.sh > STEP4a_gather_outputs_${curr_year}_${curr_month}_${curr_day}.sh
 
 		# submit it
-		qsub STEP4a_gather_outputs_${curr_year}_${curr_month}_${curr_day}.sh
+#		qsub STEP4a_gather_outputs_${curr_year}_${curr_month}_${curr_day}.sh
 		
 		# increment the dates that we are looking for next
 		increment_dates

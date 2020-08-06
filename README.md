@@ -7,6 +7,14 @@ Scripting requirements:
   * time period settings files
  * NCL scripts for post-processing (https://github.com/douglowe/WRFChem-Basic-Plotting.git)
 
+Once you've cloned the repository you will need to invoke te git submodule command to load
+the required libraries:
+```
+git submodule init
+git submodule update
+```
+
+
 Initial Scenario setup:
 * edit local_settings.txt
 * edit RUN_STEP_1_2_batch_script.sh
@@ -22,11 +30,15 @@ Running each time period:
   * set the time setting file
 * setup the time period information:
   * ./RUN_STEP_3_batch_script.sh
-* edit BATCH_STEP4_run_WRF_gather_outputs.sh:
-  * set the working directory
-  * set the scenario names
-* edit STEP4a_gather_outputs_template.sh:
+* edit Running\_Scripts/batch\_array\_promote.sh:
+  * set the number of array jobs:
+   * e.g. -J 1-4 (for 4 jobs)
+  * set the walltime
+  * set variables:
+   * WORK\_ROOT
+   * SCENARIOS (matching number of array jobs)
+* edit Running\_Scripts/gather\_outputs\_templates.sh:
   * set the script, work, and output directories
-  * set the domain that you want to process
 * submit the batch jobs:
-  * qsub BATCH_STEP4_run_WRF_gather_outputs.sh
+  * cd Running\_Scripts
+  * qsub batch\_array\_promote.sh
