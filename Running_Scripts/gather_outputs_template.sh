@@ -122,9 +122,9 @@ fi
 
 # now delete the old data files!!!!!
 cd ${WORK_ROOT}$SCENARIO
-	echo "would have removed files:"
+	echo "removing files:"
 	ls wrfout_*_${YEAR}-${MONTH}-${DAY}_*
-	#rm wrfout_*_${YEAR}-${MONTH}-${DAY}_*
+	rm wrfout_*_${YEAR}-${MONTH}-${DAY}_*
 cd -
 
 
