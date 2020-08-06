@@ -93,8 +93,9 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 		
 	RSL_TAIL=$( tail -1 rsl.error.0000 2>&1 )
 	# check for successful completion (and that we're at the end of the days that need processing
-	if [[ $RSL_TAIL == *"SUCCESS"* && 10#$next_year -eq 10#$end_year && 10#$next_month -eq 10#$end_month && 10#$next_day -eq 10#$end_day ]]; then
+	if [[ $RSL_TAIL == *"SUCCESS"* && 10#$next_year -ge 10#$end_year && 10#$next_month -ge 10#$end_month && 10#$next_day -ge 10#$end_day ]]; then
 		let FINISHED+=1
+		echo "we're in the last iteration of the plotting loop"
 	fi
 	
 	# list wrfout files that have been written, select last one, and record the day
