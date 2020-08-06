@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
-#PBS -l select=10
-#PBS -l walltime=24:00:00
+#PBS -l select=9
+#PBS -l walltime=36:00:00
 #PBS -A n02-weat
 #PBS -N promote-batch
 
@@ -18,15 +18,18 @@ cd $PBS_O_WORKDIR
 
 #### Constants
 
-WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
+WORK_ROOT=/work/n02/n02/reyes/PROMOTE/
 
-SCENARIOS=( 'run_WRF_test_a' \
-			'run_WRF_test_b' )
+
+SCENARIOS=( 'run_WRF_test_c' )
+
+
 SCEN_NUM=${#SCENARIOS[@]}
 SCEN_STRING=${SCENARIOS[@]}    # needed to convert to a single plain string for the sed command later
 
-JOB_CORES='81'
-NODE_CORES='17'
+JOB_CORES='196'
+NODE_CORES='22'
+
 
 FINISHED=0
 

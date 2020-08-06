@@ -6,12 +6,11 @@
 #
 
 # select global settings file, and load it
-GLOBAL_SETTINGS_FILE=/work/n02/n02/lowe/PROMOTE/running_scripts/local_settings.txt
+GLOBAL_SETTINGS_FILE=/work/n02/n02/reyes/PROMOTE/running_scripts_2domains/local_settings.txt
 
 source $GLOBAL_SETTINGS_FILE
 
-SCENARIOS=( 'run_WRF_test_a' \
-			'run_WRF_test_b' )
+SCENARIOS=( 'run_WRF_test_c' )
 
 ### imported from global settings file:
 #

@@ -37,7 +37,7 @@ source $1
 
 
 # load the scenario setup file (which contains the variables used below)
-source "$SCEN_DIR$3"
+source "$SCEN_DATE_DIR$3"
 
 # enter running directory
 #cd ${WORK_ROOT}$1
