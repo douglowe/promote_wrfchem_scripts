@@ -54,6 +54,9 @@ increment_dates () {
 scen=${SCENARIOS[$JOBID]}
 SCEN_NUM=1
 
+
+( # subshell for isolating our task, making checking jobs easier
+
 # start all model runs (running as a background jobs)
 cd ${WORK_ROOT}$scen
 aprun -n $JOB_CORES -N $NODE_CORES ./wrf.exe 2>&1 | tee WRF.log &
@@ -77,7 +80,8 @@ determine_next_date
 echo "starting year, month, day are: "$curr_year" "$curr_month" "$curr_day
 echo "next year, month, day are: "$next_year" "$next_month" "$next_day
 
-
+rsl_md5="XXX"
+CONSTANT=0
 while [[ $FINISHED -ne $SCEN_NUM ]]; do
 	# wait for some model progress
 	
@@ -88,14 +92,31 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 	NEXT_OUTPUT=0
 	
 	
-	
 	# tally up finished & next output counts
-		
 	RSL_TAIL=$( tail -1 rsl.error.0000 2>&1 )
 	# check for successful completion (and that we're at the end of the days that need processing
 	if [[ $RSL_TAIL == *"SUCCESS"* && 10#$next_year -ge 10#$end_year && 10#$next_month -ge 10#$end_month && 10#$next_day -ge 10#$end_day ]]; then
 		let FINISHED+=1
 		echo "we're in the last iteration of the plotting loop"
+	elif [[ $(jobs -r | wc -l) -eq 0 ]]; then
+		let FINISHED+=1
+		echo "job failed for some reason (check the logs!), so exit our plotting loop"
+	elif [[ -e "rsl.error.0000" ]]; then
+		# get the checksum of the rsl file
+		rsl_md5_new="$(md5sum rsl.error.0000)"
+		
+		if [[ $rsl_md5_new == $rsl_md5 ]]; then
+			let CONSTANT+=1
+		else
+			CONSTANT=0
+		fi
+		
+		if [[ $CONSTANT -gt 10 ]]; then
+			let FINISHED+=1
+			kill %1
+			echo "no change in log files for a long time - we'll assume the job has hung, and kill it"
+		fi
+		
 	fi
 	
 	# list wrfout files that have been written, select last one, and record the day
@@ -150,6 +171,9 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 		
 	fi
 done
+
+) # subshell for isolating our task, making checking jobs easier
+
 
 echo "successfully(?) finished running WRF"
 
