@@ -19,11 +19,11 @@ conda activate ncl-6.6.2
 
 
 #### Constants
-SCRIPT_DIR=/home/n02/n02/lowe/WRFChem-Basic-Plotting/example_scripts/data_extraction_scripts/
+SCRIPT_DIR=/work/n02/n02/reyes/WRFChem-Basic-Plotting/example_scripts/data_extraction_scripts/
 
-WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
+WORK_ROOT=/work/n02/n02/reyes/PROMOTE/
 
-OUTPUT_ROOT=/nerc/n02/n02/lowe/PROMOTE_data_files/test_scans/
+OUTPUT_ROOT=/nerc/n02/n02/reyes/PROMOTE_data_files/test_scans/
 
 
 SCENARIOS=( %%SCEN_LIST%% )
