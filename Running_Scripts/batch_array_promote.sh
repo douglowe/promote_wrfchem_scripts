@@ -94,7 +94,7 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 	
 	# tally up finished & next output counts
 	RSL_TAIL=$( tail -1 rsl.error.0000 2>&1 )
-	# check for successful completion (and that we're at the end of the days that need processing
+	# check for successful completion (and that we are at the end of the days that need processing
 	if [[ $RSL_TAIL == *"SUCCESS"* && 10#$next_year -ge 10#$end_year && 10#$next_month -ge 10#$end_month && 10#$next_day -ge 10#$end_day ]]; then
 		let FINISHED+=1
 		echo "we're in the last iteration of the plotting loop"
@@ -109,12 +109,13 @@ while [[ $FINISHED -ne $SCEN_NUM ]]; do
 			let CONSTANT+=1
 		else
 			CONSTANT=0
+			rsl_md5=$rsl_md5_new
 		fi
 		
 		if [[ $CONSTANT -gt 10 ]]; then
 			let FINISHED+=1
 			kill %1
-			echo "no change in log files for a long time - we'll assume the job has hung, and kill it"
+			echo "no change in log files for a long time - we will assume the job has hung, and kill it"
 		fi
 		
 	fi
