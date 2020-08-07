@@ -20,8 +20,8 @@ SCRIPT_DIR=/work/n02/n02/reyes/WRFChem-Basic-Plotting/example_scripts/data_extra
 TEMPLATE=${DATA_ROOT}run_directory_template/
 
 #EXEC_DIR="${DATA_ROOT}exec/test_v3.8.1_code_new_CRI_VBS_controls_Mar2019/"
-EXEC_DIR="${DATA_ROOT}exec/test_v3.8.1_code_new_CRI_VBS_Oct2019_no_OH_flexi_oxidation/"
-BDY_DIR=${DATA_ROOT}input_files/body_files_for_may_june_2018_2domain/cri_mosaic_vbs_8bin_with_cesm_waccm_boundary_aged_vbs/
+EXEC_DIR="${DATA_ROOT}exec/test_v3.8.1_code_new_CRI_VBS_July2020_no_OH_flexi_oxidation_ISOPRENE_APINENE_BPINENE_x5/"
+BDY_DIR=${WORK_ROOT}input_files/body_files/cri_mosaic_vbs_8bin_with_cesm_waccm_boundary_aged_vbs/
 BIO_DIR=${DATA_ROOT}input_files/biogenic_emissions/May_24_2018_2domains/
 BBURN_DIR=${DATA_ROOT}input_files/biomass_burning_emissions/FINN_v1.5_2018_2domains/
 
@@ -35,7 +35,7 @@ ARVAR_FILE=add_remove_var.vbs_spc.operational.txt
 SCEN_DIR=${WORK_ROOT}scenario_configurations/Scenario_Configurations/test_chemistry_files/
 
 NAME_DIR=${DATA_ROOT}namelists/CRI_VBS_namelists/new_vbs_controls/templates_with_spectral_nudging/
-NAMEFILE=namelist.input.cri_mos_vbs_co.fire_emissions.afwa_dust_scheme.opt13.template.domain2_as_domain1
+NAMEFILE=namelist.input.cri_mos_vbs_co.fire_emissions.afwa_dust_scheme.opt13.template.domain2_as_domain1.one_domain
 
 #BDY_DIR=${DATA_ROOT}input_files/body_files_for_april_may_2018/
 
