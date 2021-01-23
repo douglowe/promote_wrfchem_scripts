@@ -51,13 +51,13 @@ if (.not. isvar("domain")) then
 	domain="d03"
 end if
 
-file_variables = (/ "AOD550", "PM1_mass", "OC_ratio", \
+file_variables = (/ "AOD550", "OC_ratio", \
 					"PM25_mass", "PM10_mass", "PM1_VBS_OM", \
-					"PM1_SOA_OM", "PM1_ANT_SOA_OM", "PM1_BIOG_SOA_OM", \
+					"PM1_ANT_SOA_OM", "PM1_BIOG_SOA_OM", \
 					"PM1_Inorg" /)
-proc_variables = (/"AOD550", "DRY_pm1", "ocratio_pm1", \
+proc_variables = (/"AOD550", "ocratio_pm1", \
 					"DRY_pm25", "DRY_tot", "POA_pm1", \
-					"soa_pm1", "antsoa_pm1", "biogsoa_pm1", \
+					"antsoa_pm1", "biogsoa_pm1", \
 					"AMSINORG_pm1"/)
 
 ; This flag determines if we want to plot a set of defined time points, or the whole campaign.

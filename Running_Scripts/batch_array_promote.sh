@@ -1,9 +1,9 @@
 #!/bin/bash --login
 
-#PBS -J 1-4
+#PBS -J 1-15
 #PBS -r y
-#PBS -l select=6
-#PBS -l walltime=06:00:00
+#PBS -l select=10
+#PBS -l walltime=24:00:00
 #PBS -A n02-weat
 #PBS -N promote-batch
 
@@ -23,13 +23,16 @@ JOBID=$(($PBS_ARRAY_INDEX-1))
 
 WORK_ROOT=/work/n02/n02/lowe/PROMOTE/
 
-SCENARIOS=( 'TRAIN000' 'TRAIN001' \
-			'TRAIN002' 'TRAIN003' )
+SCENARIOS=(  \
+'TRAIN115' 'TRAIN116' 'TRAIN117' 'TRAIN118' 'TRAIN119' \
+'TRAIN120' 'TRAIN121' 'TRAIN122' 'TRAIN123' 'TRAIN124' \
+'TRAIN125' 'TRAIN126' 'TRAIN127' 'TRAIN128' 'TRAIN129' )
+
 
 # see below for $scen - replaces $SCEN_STRING
 
-JOB_CORES='144'
-NODE_CORES='24'
+JOB_CORES='225'
+NODE_CORES='23'
 
 FINISHED=0
 
